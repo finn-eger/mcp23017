@@ -2,8 +2,10 @@
 name = "mcp23017-driver"
 version = "0.1.0"
 edition = "2021"
-description = "An `embedded-hal` based Rust driver for the Microchip MCP23017 IO expander."
+description = "A comprehensive Rust driver for the Microchip MCP23017 IO expander."
 license = "MIT"
+keywords = ["mcp23017", "no_std"]
+categories = ["embedded", "hardware-support", "no-std::no-alloc"]
 
 [dependencies]
 embedded-hal = "1.0.0"
