@@ -117,6 +117,7 @@ impl<'a, S: I2c, const A: u8> InterruptController<'a, S, A> {
     /// [`Self::triggered()`] at any time.
     pub fn interrupt(&mut self, bank: Bank) -> Result<(), AtomicError<S::Error>> {
         let intf_address = match bank {
+            #[allow(clippy::identity_op)]
             Bank::A => Registers::<crate::pin::A0, S, A>::INTF + 0,
             Bank::B => Registers::<crate::pin::B0, S, A>::INTF + 1,
         };
@@ -136,6 +137,7 @@ impl<'a, S: I2c, const A: u8> InterruptController<'a, S, A> {
         };
 
         let intcap_address = match bank {
+            #[allow(clippy::identity_op)]
             Bank::A => Registers::<crate::pin::A0, S, A>::INTCAP + 0,
             Bank::B => Registers::<crate::pin::B0, S, A>::INTCAP + 1,
         };
@@ -168,9 +170,9 @@ impl<'a, S: I2c, const A: u8> InterruptController<'a, S, A> {
 
     /// Check whether a pin has triggered an interrupt since the last call to
     /// this method, and if so get the state at the pin's last interrupt.
-    pub fn triggered<'b, I: PinId, C: InputConfiguration>(
+    pub fn triggered<I: PinId, C: InputConfiguration>(
         &self,
-        _pin: &Pin<'b, I, Interrupt<C>, S, A>,
+        _pin: &Pin<'_, I, Interrupt<C>, S, A>,
     ) -> Option<bool> {
         let mask = 1 << I::NUMBER;
 
