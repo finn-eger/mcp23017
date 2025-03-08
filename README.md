@@ -1,10 +1,10 @@
-A comprehensive Rust driver for the [Microchip MCP23017](Microchip) IO expander.
+A comprehensive Rust driver for the [Microchip MCP23017][Microchip] IO expander.
 
-- Split a device into individual [`embedded-hal`](embedded-hal) pins.
+- Split a device into individual [`embedded-hal`][embedded-hal] pins.
 - Configure modes, pull-ups, and interrupt triggers with a type-level API.
 - Service interrupts efficiently with a centralized controller.
 
-For usage details and explanatory notes, see the [documentation](Docs.rs).
+For usage details and explanatory notes, see the [documentation][Docs.rs].
 
 ### Overview
 
