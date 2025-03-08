@@ -1,8 +1,9 @@
 [package]
 name = "mcp23017-driver"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A comprehensive Rust driver for the Microchip MCP23017 IO expander."
+repository = "https://github.com/finn-eger/mcp23017"
 license = "MIT"
 keywords = ["mcp23017", "no_std"]
 categories = ["embedded", "hardware-support", "no-std::no-alloc"]
